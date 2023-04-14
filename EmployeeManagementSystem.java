@@ -76,3 +76,7 @@ public class EmployeeManagementSystem {
 }
 class PayrollSystem {
 private final EmployeeDatabase employeeDatabase = new EmployeeDatabase();
+public void addEmployee(String name, double salary, double taxRate, double niRate) {
+Employee employee = new Employee(name, salary, taxRate, niRate);
+employeeDatabase.addEmployee(employee);
+}    
