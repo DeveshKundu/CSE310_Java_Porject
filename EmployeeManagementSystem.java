@@ -61,6 +61,13 @@ public int getId() {
     public double getNetPay() {
         return salary - getTax() - getNationalInsurance();
     }
+    
+    @Override
+    public String toString() {
+        return "ID: " + id + ", Name: " + name + ", Salary: " + salary + ", Tax Rate: " + taxRate + ", NI Rate: "
+                + niRate;
+    }
+}
 
 public class EmployeeManagementSystem {
     public static void main(String[] args) {
