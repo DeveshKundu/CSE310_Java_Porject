@@ -74,3 +74,5 @@ public class EmployeeManagementSystem {
         
     }
 }
+class PayrollSystem {
+private final EmployeeDatabase employeeDatabase = new EmployeeDatabase();
