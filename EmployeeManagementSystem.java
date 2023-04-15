@@ -119,3 +119,9 @@ payrollSystem.saveDatabaseToFile("employees.txt");
 } catch (IOException e) {
 System.err.println("Error saving database to file: " + e.getMessage());
 }
+// Load the database from a file
+try {
+payrollSystem.loadDatabaseFromFile("employees.txt");
+} catch (IOException e) {
+System.err.println("Error loading database from file: " + e.getMessage());
+}
