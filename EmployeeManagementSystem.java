@@ -93,3 +93,11 @@ System.out.println("------------------------");
 employee.setSalary(employee.getSalary() + netPay); // Add net pay to next month's salary
 }
 }    
+public void saveDatabaseToFile(String fileName) throws IOException {
+employeeDatabase.saveToFile(fileName);
+}
+
+public void loadDatabaseFromFile(String fileName) throws IOException {
+employeeDatabase.loadFromFile(fileName);
+}
+}
