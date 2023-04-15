@@ -101,3 +101,9 @@ public void loadDatabaseFromFile(String fileName) throws IOException {
 employeeDatabase.loadFromFile(fileName);
 }
 }
+public class Main {
+public static void main(String[] args) {
+PayrollSystem payrollSystem = new PayrollSystem();
+// Add employees to the database
+payrollSystem.addEmployee("John Smith", 3000.0, 0.2, 0.1);
+payrollSystem.addEmployee("Jane Doe", 4000.0, 0.25, 0.15);
