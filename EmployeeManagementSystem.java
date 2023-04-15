@@ -100,7 +100,7 @@ class EmployeeDatabase {
     public void saveToFile(String fileName) throws IOException {
         try (PrintWriter writer = new PrintWriter(new FileWriter(fileName))) {
             for (Employee employee : employees) {
-                writer.println(employee.getId() + "," + employee.getname() + "," + employee.getSalary()
+                writer.println(employee.getId() + "," + employee.getName() + "," + employee.getSalary()
                                + "," + employee.getTaxRate() + "," + employee.getNiRate());
             }
         }
