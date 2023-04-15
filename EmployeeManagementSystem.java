@@ -125,3 +125,7 @@ payrollSystem.loadDatabaseFromFile("employees.txt");
 } catch (IOException e) {
 System.err.println("Error loading database from file: " + e.getMessage());
 }
+// Pay the employees and display their pay slips
+payrollSystem.payEmployees();
+}
+}
