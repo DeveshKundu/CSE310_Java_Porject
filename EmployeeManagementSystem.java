@@ -80,3 +80,16 @@ public void addEmployee(String name, double salary, double taxRate, double niRat
 Employee employee = new Employee(name, salary, taxRate, niRate);
 employeeDatabase.addEmployee(employee);
 }    
+public void payEmployees() {
+List<Employee> employees = employeeDatabase.getAllEmployees();
+for (Employee employee : employees) {
+double netPay = employee.getNetPay();
+System.out.println("Pay Slip for " + employee.getName());
+System.out.println("Gross Pay: " + employee.getGrossPay());
+System.out.println("Tax: " + employee.getTax());
+System.out.println("National Insurance: " + employee.getNationalInsurance());
+System.out.println("Net Pay: " + netPay);
+System.out.println("------------------------");
+employee.setSalary(employee.getSalary() + netPay); // Add net pay to next month's salary
+}
+}    
