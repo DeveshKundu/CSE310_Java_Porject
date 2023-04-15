@@ -33,6 +33,12 @@ public int getId() {
     public double getTaxRate() {
         return taxRate;
     }
+    // Save the database to a file
+try {
+payrollSystem.saveDatabaseToFile("employees.txt");
+} catch (IOException e) {
+System.err.println("Error saving database to file: " + e.getMessage());
+}
 
     public void setTaxRate(double taxRate) {
         this.taxRate = taxRate;
