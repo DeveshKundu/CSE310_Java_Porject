@@ -97,11 +97,28 @@ class EmployeeDatabase {
         return employees;
     }
     
-    public void saveToFile(String filename) throws IOException {
-        try (PrintWriter writer = new PrintWriter(new FileWriter(filename))) {
+    public void saveToFile(String fileName) throws IOException {
+        try (PrintWriter writer = new PrintWriter(new FileWriter(fileName))) {
             for (Employee employee : employees) {
                 writer.println(employee.getId() + "," + employee.getname() + "," + employee.getSalary()
                                + "," + employee.getTaxRate() + "," + employee.getNiRate());
+            }
+        }
+    }
+    
+    public void loadFromFile(String fileName) throws IOException {
+        try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                String[] fields = line.split(",");
+                Integer.parseInt(fields[0]);
+                String name = fields[1];
+                double salary = Double.parseDouble(fields[2]);
+                double taxRate = Double.parseDouble(fields[3]);
+                double niRate = Double.parseDouble(fields[4]);
+                employees.add(new Employee(name, salary, taxRate, niRate));
+                Employee nextEmployee = new Employee(name, salary, taxRate, niRate);
+                nextEmployee.getId();
             }
         }
     }
