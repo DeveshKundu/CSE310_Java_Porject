@@ -7,12 +7,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 class Employee {
-    private static int nextId = 1;
-    private final int id;
-    private final String name;
-    private double salary;
-    private double taxRate;
-    private double niRate;
+    static int nextId = 1;
+    final int id;
+    final String name;
+    double salary;
+    double taxRate;
+    double niRate;
     
     public Employee (String name, double salary, double taxRate, double niRate) {
         this.id = nextId++;
@@ -78,7 +78,7 @@ class Employee {
 }
 
 class EmployeeDatabase {
-    private final List<Employee> employees = new ArrayList<>();
+    final List<Employee> employees = new ArrayList<>();
     
     public void addEmployee(Employee employee) {
         employees.add(employee);
@@ -125,7 +125,7 @@ class EmployeeDatabase {
 }
 
 class PayrollSystem {
-    private final EmployeeDatabase employeeDatabase = new EmployeeDatabase();
+    final EmployeeDatabase employeeDatabase = new EmployeeDatabase();
     public void addEmployee(String name, double salary, double taxRate, double niRate) {
         Employee employee = new Employee(name, salary, taxRate, niRate);
         employeeDatabase.addEmployee(employee);
