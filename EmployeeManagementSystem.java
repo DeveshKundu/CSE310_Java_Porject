@@ -4,7 +4,6 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
-import java.util.List;
 
 class Employee {
     static int nextId = 1;
@@ -78,7 +77,7 @@ class Employee {
 }
 
 class EmployeeDatabase {
-    final List<Employee> employees = new ArrayList<>();
+    final ArrayList<Employee> employees = new ArrayList<>();
     
     public void addEmployee(Employee employee) {
         employees.add(employee);
@@ -93,7 +92,7 @@ class EmployeeDatabase {
         return null;
     }
     
-    public List<Employee> getAllEmployees() {
+    public ArrayList<Employee> getAllEmployees() {
         return employees;
     }
     
@@ -132,7 +131,7 @@ class PayrollSystem {
     }
     
     public void payEmployees() {
-        List<Employee> employees = employeeDatabase.getAllEmployees();
+        ArrayList<Employee> employees = employeeDatabase.getAllEmployees();
         for (Employee employee : employees) {
             double netPay = employee.getNetPay();
             System.out.println("Pay Slip for " + employee.getName());
@@ -176,4 +175,3 @@ public class EmployeeManagementSystem {
         payrollSystem.payEmployees();
     }
 }
-
